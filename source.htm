@@ -1,0 +1,242 @@
+<!-- <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <title>거래처등록</title>
+    <script type="text/javascript">
+        var loginForm = document.loginForm;
+        var mutual = loginForm.mutual.value;
+        var representative = loginForm.representative.value;
+        var companyRegisterNum = loginForm.companyRegisterNum.value;
+        var representativeNum = loginForm.representativeNum.value;
+    
+        var userId = loginForm.userId.value;
+        var password = loginForm.password.value;
+        var passwordCheck = loginForm.passwordCheck.value;
+        var division = loginForm.division.value;
+        var privacyConsent = loginForm.privacyConsent.value;
+        var notPrivacyConsent = loginForm.notPrivacyConsent.value;
+
+        function Register(){
+            if(!mutual || !representative || !companyRegisterNum || !representativeNum  || !userId || !password || !passwordCheck){
+                alert("입력하지 않은 공간이 있습니다. 입력해주세요.")
+            }
+            else if(password != passwordCheck) {
+                alert("비밀번호가 일치하지 않습니다.")
+            }
+            // else if() {
+            //     alert("개인정보동의를 해주세요.")
+            // }
+            else{
+                loginForm.submit();
+            }
+        }
+
+        function TemporaryStorage() {
+            alert("임시저장되었습니다.")
+            loginForm.submit();
+        }
+        
+    </script>
+</head>
+<body>
+    <h1>[거래처 등록]</h1> 
+    <form name="loginForm" action="http://localhost/login"  method="post">
+            대표자  <input type="text" name="representative"><br>
+            사업자등록번호  <input type="text" name="companyRegisterNum"><br>
+            대표전화  <input type="text" name="representativeNum"><br>
+            
+            거래처ID  <input type="text" name="userId"><br>
+            비밀번호  <input type="password" name="password"><br>  
+            비밀번호 확인  <input type="password" name="passwordCheck"><br>
+            <label for="choose">기업 분류 </label><select name="division">
+                <option value="">--선택해주세요--</option>
+                <option value="big">대기업</option>
+                <option value="middle">중소기업</option>
+                <option value="small">소상공인</option>
+            </select><br><br>
+            개인정보동의<br>
+            동의 <input type="radio" name="privacyConsent" value="confirm"> 동의안함 <input type="radio" name="privacyConsent" value="notConfirm"><br><br>
+            <input type="hidden" name="loginType" value="admin">
+            <input type="button" onclick="Register()" value="즉시등록">
+            <input type="button" onclick="TemporaryStorage()" value="임시저장">
+    </form>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+    <title>거래처등록</title>
+    <script>
+
+        function Register(){
+            var loginForm = document.getElementsByClassName('loginForm');
+            const mutual = document.getElementById('mutual').value;
+            const representative = document.getElementById('representative').value;
+            const companyRegisterNum = document.getElementById('companyRegisterNum').value;
+            const representativeNum = document.getElementById('representativeNum').value;
+            const paxNum = document.getElementById('paxNum').value;
+            const businessLocation = document.getElementById('businessLocation').value;
+            const homepage = document.getElementById('homepage').value;
+            const managerName = document.getElementById('managerName').value;
+            const phoneNum = document.getElementById('phoneNum').value;
+            const email = document.getElementById('email').value;
+            const item = document.getElementById('item').value;
+            const userId = document.getElementById('userId').value;
+            const password = document.getElementById('password').value;
+            const passwordCheck = document.getElementById('passwordCheck').value;
+
+            console.log(representative)
+            if(mutual == ""){
+                alert("상호명을 입력하지 않으셨습니다. 입력해주세요.");
+                return;
+            }
+            else if(representative == ""){
+                alert("대표자명을 입력하지 않으셨습니다. 입력해주세요.");
+                return;
+            }
+            else if(companyRegisterNum == ""){
+                alert("사업자등록번호를 입력하지 않으셨습니다. 입력해주세요.");
+                return;
+            }
+            else if(representativeNum == ""){
+                alert("대표전화를 입력하지 않으셨습니다. 입력해주세요.");
+                return;
+            }
+            else if(paxNum == ""){
+                alert("팩스번호를 입력하지 않으셨습니다. 입력해주세요.");
+                return;
+            }
+            else if(businessLocation == ""){
+                alert("사업장소재지를 입력하지 않으셨습니다. 입력해주세요.");
+                return;
+            }
+            else if(homepage == ""){
+                alert("홈페이지를 입력하지 않으셨습니다. 입력해주세요.");
+                return;
+            }
+            else if(managerName == ""){
+                alert("담당자명을 입력하지 않으셨습니다. 입력해주세요.");
+                return;
+            }
+            else if(phoneNum == ""){
+                alert("휴대전화를 입력하지 않으셨습니다. 입력해주세요.");
+                return;
+            }
+            else if(email == ""){
+                alert("이메일을 입력하지 않으셨습니다. 입력해주세요.");
+                return;
+            }
+            else if(item == ""){
+                alert("주요거래품목을 입력하지 않으셨습니다. 입력해주세요.");
+                return;
+            }
+
+            else if(userId == ""){
+                alert("아이디를 입력하지 않으셨습니다. 입력해주세요.");
+                return;
+            }
+            else if(password == ""){
+                alert("비밀번호를 입력하지 않으셨습니다. 입력해주세요.");
+                return;
+            }
+            else if(passwordCheck == ""){
+                alert("비밀번호확인을 입력하지 않으셨습니다. 입력해주세요.");
+                return;
+            }
+
+            else if(password != passwordCheck) {
+                alert("비밀번호가 일치하지 않습니다.");
+                return;
+            }
+        }
+
+        function TemporaryStorage() {
+            alert("임시저장되었습니다.");
+        }
+        
+    </script>
+</head>
+<body>
+    <h1>[거래처 등록]</h1> 
+    
+        <div>
+            <label>상호</label>
+            <input type="text" id="mutual" name="mutual"/><br>
+        </div>
+        <div>
+            <label>대표자</label>
+            <input type="text" id="representative" name="representative"/><br>
+        </div>
+        <div>
+            <label>사업자등록번호</label>
+            <input type="text" id="companyRegisterNum" name="companyRegisterNum"/><br>
+        </div>
+        <div>
+            <label>대표전화</label>
+            <input type="tel" id="representativeNum" name="representativeNum"/><br>
+        </div>
+        <div>
+            <label>팩스번호</label>
+            <input type="tel" id="paxNum" name="paxNum"/><br>
+        </div>
+        <div>
+            <label>사업장소재지</label>
+            <input type="text" id="businessLocation" name="businessLocation"/><br>
+        </div>
+        <div>
+            <label>홈페이지</label>
+            <input type="text" id="homepage" name="homepage"/><br>
+        </div>
+        <div>
+            <label>담당자명</label>
+            <input type="text" id="managerName" name="managerName"/><br>
+        </div>
+        <div>
+            <label>휴대전화</label>
+            <input type="tel" id="phoneNum" name="phoneNum"/><br>
+        </div>
+        <div>
+            <label>이메일 </label>
+            <input type="email" id="email" name="email"/><br>
+        </div>
+        <div>
+            <label>주요거래품목</label>
+            <input type="text" id="item" name="item"/><br><br>
+        </div>
+
+        <div>
+            <label>거래처ID</label>
+            <input type="text" id="userId" name="userId"/><br>
+        </div>
+        <div>
+            <label>비밀번호</label>
+            <input type="password" id="password" name="password"/><br>  
+        </div>
+        <div>
+            <label>비밀번호 확인</label>
+            <input type="password" id="passwordCheck" name="passwordCheck"/><br>
+        </div>
+            
+              
+        <div>
+            <label>기업 분류 </label><select name="division">
+                <option value="">--선택해주세요--</option>
+                <option value="big">대기업</option>
+                <option value="middle">중소기업</option>
+                <option value="small">소상공인</option>
+            </select><br><br>
+        </div>
+        <div>
+            개인정보동의<br>
+            동의 <input type="radio" name="privacyConsent"  value="confirm"/> 
+            동의안함 <input type="radio" name="privacyConsent"  value="notConfirm"/><br><br>
+            <div style="display: flex;">
+                <button style="height: 30px; width:80px;" onclick="Register()"/> 즉시등록
+                <button style="height: 30px; width:80px; margin-left: 30px;" onclick="TemporaryStorage()"/>임시저장
+            </div>
+        </div>
+</body>
+</html>
